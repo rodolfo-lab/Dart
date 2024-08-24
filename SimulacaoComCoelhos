@@ -1,0 +1,32 @@
+void main() {
+  int coelhosAdultos = 2;
+  int coelhosJovens = 4;
+  int mes = 0;
+
+  do {
+    coelhosAdultos += coelhosJovens;
+    coelhosJovens = CoelhoSeReproduz(coelhosAdultos);
+    mes++;
+
+    if (mes % 12 == 0) {
+      print('Mordida');
+      var resultado = predadorComeCoelho(coelhosAdultos, coelhosJovens);
+      coelhosAdultos = resultado['adultos'];
+      coelhosJovens = resultado['jovens'];
+    }
+
+    print(
+        'Fim do Mês $mes : População de coelhos: ${coelhosJovens + coelhosAdultos}, Jovens: $coelhosJovens Adultos: $coelhosAdultos');
+  } while (mes < 24);
+}
+
+CoelhoSeReproduz(int coelhosAdultos) {
+  return coelhosAdultos.toInt();
+}
+
+predadorComeCoelho(int coelhosAdultos, int coelhosJovens) {
+  return {
+    'adultos': (coelhosAdultos * 0.25).toInt(),
+    'jovens': (coelhosJovens * 0.25).toInt()
+  };
+}
