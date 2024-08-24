@@ -17,7 +17,7 @@ void main() {
 
     print(
         'Fim do Mês $mes : População de coelhos: ${coelhosJovens + coelhosAdultos}, Jovens: $coelhosJovens Adultos: $coelhosAdultos');
-  } while (mes < 24);
+  } while (mes < 12);
 }
 
 CoelhoSeReproduz(int coelhosAdultos) {
