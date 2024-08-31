@@ -5,10 +5,10 @@ void main() {
 
   do {
     coelhosAdultos += coelhosJovens;
-    coelhosJovens = CoelhoSeReproduz(coelhosAdultos);
+    coelhosJovens = coelhoSeReproduz(coelhosAdultos);
     mes++;
 
-    if (mes % 12 == 0) {
+    if (mes > 12) {
       print('Mordida');
       var resultado = predadorComeCoelho(coelhosAdultos, coelhosJovens);
       coelhosAdultos = resultado['adultos'];
@@ -20,7 +20,7 @@ void main() {
   } while (mes < 12);
 }
 
-CoelhoSeReproduz(int coelhosAdultos) {
+coelhoSeReproduz(int coelhosAdultos) {
   return coelhosAdultos.toInt();
 }
 
